@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ivory: 242 237 227;
+  --color-charcoal: 41 43 39;
+  --color-stone: 216 208 194;
+  --color-olive: 121 128 106;
+  --color-olive-deep: 92 99 80;
+  --color-clay: 180 127 98;
+  --color-clay-deep: 143 95 69;
+  --color-muted: 94 98 90;
+}
+
+@layer base {
+  body {
+    @apply bg-ivory font-sans text-charcoal antialiased;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-clay-deep));
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
